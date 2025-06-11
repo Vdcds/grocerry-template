@@ -11,17 +11,17 @@ export function CartItemCard({ item }: CartItemCardProps) {
   const { dispatch } = useCart();
 
   const handleIncrement = () => {
-    dispatch({ 
-      type: 'UPDATE_QUANTITY', 
-      payload: { id: item.id, quantity: item.quantity + 1 } 
+    dispatch({
+      type: 'UPDATE_QUANTITY',
+      payload: { id: item.id, quantity: item.quantity + 1 },
     });
   };
 
   const handleDecrement = () => {
     if (item.quantity > 1) {
-      dispatch({ 
-        type: 'UPDATE_QUANTITY', 
-        payload: { id: item.id, quantity: item.quantity - 1 } 
+      dispatch({
+        type: 'UPDATE_QUANTITY',
+        payload: { id: item.id, quantity: item.quantity - 1 },
       });
     }
   };
@@ -33,24 +33,30 @@ export function CartItemCard({ item }: CartItemCardProps) {
   return (
     <View style={styles.container}>
       <Image source={{ uri: item.image }} style={styles.image} />
-      
+
       <View style={styles.content}>
         <Text style={styles.name}>{item.name}</Text>
         <Text style={styles.unit}>{item.unit}</Text>
         <Text style={styles.price}>${item.price.toFixed(2)}</Text>
       </View>
-      
+
       <View style={styles.controls}>
         <TouchableOpacity style={styles.removeButton} onPress={handleRemove}>
           <Trash2 size={16} color="#EF4444" />
         </TouchableOpacity>
-        
+
         <View style={styles.quantityContainer}>
-          <TouchableOpacity style={styles.quantityButton} onPress={handleDecrement}>
+          <TouchableOpacity
+            style={styles.quantityButton}
+            onPress={handleDecrement}
+          >
             <Minus size={16} color="#6B7280" />
           </TouchableOpacity>
           <Text style={styles.quantity}>{item.quantity}</Text>
-          <TouchableOpacity style={styles.quantityButton} onPress={handleIncrement}>
+          <TouchableOpacity
+            style={styles.quantityButton}
+            onPress={handleIncrement}
+          >
             <Plus size={16} color="#10B981" />
           </TouchableOpacity>
         </View>

@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TextInput, ScrollView, SafeAreaView } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TextInput,
+  ScrollView,
+  SafeAreaView,
+} from 'react-native';
 import { Search as SearchIcon } from 'lucide-react-native';
 import { CartProvider } from '@/contexts/CartContext';
 import { ProductCard } from '@/components/ProductCard';
@@ -7,10 +14,11 @@ import { products } from '@/data/products';
 
 function SearchContent() {
   const [searchQuery, setSearchQuery] = useState('');
-  
-  const filteredProducts = products.filter(product =>
-    product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    product.category.toLowerCase().includes(searchQuery.toLowerCase())
+
+  const filteredProducts = products.filter(
+    (product) =>
+      product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      product.category.toLowerCase().includes(searchQuery.toLowerCase()),
   );
 
   return (
@@ -36,11 +44,14 @@ function SearchContent() {
       </View>
 
       {/* Results */}
-      <ScrollView style={styles.resultsContainer} showsVerticalScrollIndicator={false}>
+      <ScrollView
+        style={styles.resultsContainer}
+        showsVerticalScrollIndicator={false}
+      >
         {searchQuery.length > 0 ? (
           <>
             <Text style={styles.resultsTitle}>
-              {filteredProducts.length} results for "{searchQuery}"
+              {filteredProducts.length} results for &quot;{searchQuery}&quot;
             </Text>
             <View style={styles.productsGrid}>
               {filteredProducts.map((product) => (

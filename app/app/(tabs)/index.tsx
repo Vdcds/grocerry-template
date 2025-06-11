@@ -1,5 +1,12 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, FlatList, SafeAreaView } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  FlatList,
+  SafeAreaView,
+} from 'react-native';
 import { CartProvider } from '@/contexts/CartContext';
 import { ProductCard } from '@/components/ProductCard';
 import { CategoryCard } from '@/components/CategoryCard';
@@ -12,7 +19,9 @@ function HomeContent() {
         {/* Header */}
         <View style={styles.header}>
           <Text style={styles.greeting}>Good morning! 👋</Text>
-          <Text style={styles.subtitle}>What would you like to order today?</Text>
+          <Text style={styles.subtitle}>
+            What would you like to order today?
+          </Text>
         </View>
 
         {/* Categories */}

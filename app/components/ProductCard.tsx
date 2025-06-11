@@ -1,8 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { Star, Plus } from 'lucide-react-native';
-import { Product } from '@/contexts/CartContext';
-import { useCart } from '@/contexts/CartContext';
+import { Product, useCart } from '@/contexts/CartContext';
 
 interface ProductCardProps {
   product: Product;
@@ -20,14 +19,16 @@ export function ProductCard({ product, onPress }: ProductCardProps) {
     <TouchableOpacity style={styles.container} onPress={onPress}>
       <Image source={{ uri: product.image }} style={styles.image} />
       <View style={styles.content}>
-        <Text style={styles.name} numberOfLines={2}>{product.name}</Text>
+        <Text style={styles.name} numberOfLines={2}>
+          {product.name}
+        </Text>
         <Text style={styles.unit}>{product.unit}</Text>
-        
+
         <View style={styles.ratingContainer}>
           <Star size={12} color="#FFC107" fill="#FFC107" />
           <Text style={styles.rating}>{product.rating}</Text>
         </View>
-        
+
         <View style={styles.footer}>
           <Text style={styles.price}>${product.price.toFixed(2)}</Text>
           <TouchableOpacity style={styles.addButton} onPress={handleAddToCart}>

@@ -17,7 +17,7 @@ function CategoriesContent() {
     useState<string>('Fresh Produce');
 
   const filteredProducts = products.filter(
-    (product) => product.category === selectedCategory
+    (product) => product.category === selectedCategory,
   );
 
   return (

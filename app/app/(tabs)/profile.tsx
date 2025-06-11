@@ -1,6 +1,23 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView, SafeAreaView } from 'react-native';
-import { User, MapPin, CreditCard, Bell, Heart, CircleHelp as HelpCircle, Settings, LogOut, ChevronRight } from 'lucide-react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  ScrollView,
+  SafeAreaView,
+} from 'react-native';
+import {
+  User,
+  MapPin,
+  CreditCard,
+  Bell,
+  Heart,
+  CircleHelp as HelpCircle,
+  Settings,
+  LogOut,
+  ChevronRight,
+} from 'lucide-react-native';
 
 interface MenuItemProps {
   icon: React.ReactNode;

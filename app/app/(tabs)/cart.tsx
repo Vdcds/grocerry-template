@@ -1,5 +1,12 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, SafeAreaView } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+  SafeAreaView,
+} from 'react-native';
 import { ShoppingBag, CreditCard } from 'lucide-react-native';
 import { CartProvider, useCart } from '@/contexts/CartContext';
 import { CartItemCard } from '@/components/CartItemCard';
@@ -29,7 +36,10 @@ function CartContent() {
       ) : (
         <>
           {/* Cart Items */}
-          <ScrollView style={styles.itemsContainer} showsVerticalScrollIndicator={false}>
+          <ScrollView
+            style={styles.itemsContainer}
+            showsVerticalScrollIndicator={false}
+          >
             {state.items.map((item) => (
               <CartItemCard key={item.id} item={item} />
             ))}

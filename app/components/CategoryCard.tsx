@@ -16,7 +16,12 @@ interface CategoryCardProps {
 export function CategoryCard({ category, onPress }: CategoryCardProps) {
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
-      <View style={[styles.iconContainer, { backgroundColor: category.color + '20' }]}>
+      <View
+        style={[
+          styles.iconContainer,
+          { backgroundColor: category.color + '20' },
+        ]}
+      >
         <Text style={styles.icon}>{category.icon}</Text>
       </View>
       <Text style={styles.name}>{category.name}</Text>
