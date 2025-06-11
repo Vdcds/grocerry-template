@@ -6,5 +6,5 @@ cd ..
 
 echo "🧼 Linting server/"
 cd server
-pnpm lint || exit 1
+pnpm format && pnpm lint || exit 1
 cd ..
