@@ -1,0 +1,10 @@
+#!/bin/sh
+echo "🧼 Linting app/"
+cd app
+pnpm lint || exit 1
+cd ..
+
+echo "🧼 Linting server/"
+cd server
+pnpm lint || exit 1
+cd ..
