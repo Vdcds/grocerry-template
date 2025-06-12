@@ -1,0 +1,12 @@
+#!/bin/sh
+echo "🏗️ Building app/"
+cd app
+pnpm build || { echo "❌ App build failed"; exit 1; }
+cd ..
+
+echo "🏗️ Building server/"
+cd server
+pnpm build || { echo "❌ Server build failed"; exit 1; }
+cd ..
+
+echo "✅ Build successful! Pushing changes..."
