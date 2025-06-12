@@ -1,7 +1,7 @@
 #!/bin/sh
 echo "🏗️ Building app/"
 cd app
-pnpm build || { echo "❌ App build failed"; exit 1; }
+pnpm build:web || { echo "❌ App build failed"; exit 1; }
 cd ..
 
 echo "🏗️ Building server/"
