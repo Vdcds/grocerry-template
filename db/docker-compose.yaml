@@ -1,0 +1,10 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: grocery-shop-postgres
+    environment:
+      POSTGRES_USER: johndoe
+      POSTGRES_PASSWORD: randompassword
+      POSTGRES_DB: mydb
+    ports:
+      - "5432:5432"
